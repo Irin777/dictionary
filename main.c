@@ -36,6 +36,17 @@ head = mergeSort(head);
 second = mergeSort(second);
 return merge(head, second);
 }
+void insert(struct node **head, string data) 	
+{struct node *temp =  new node();
+temp->data = data;
+temp->next = temp->prev = NULL;
+if (!(*head))
+(*head) = temp;
+else{
+temp->next = *head;
+(*head)->prev = temp;
+(*head) = temp;
+}}
 
 struct node *split(struct node *head)
 {struct node *fast = head, *slow = head;

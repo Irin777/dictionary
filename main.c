@@ -47,7 +47,13 @@ temp->next = *head;
 (*head)->prev = temp;
 (*head) = temp;
 }}
-
+void print(struct node *head)
+{struct node *temp = head;
+while (head)
+{cout << head->data << endl;
+temp = head;
+head = head->next;
+}}
 struct node *split(struct node *head)
 {struct node *fast = head, *slow = head;
 while (fast->next && fast->next->next)

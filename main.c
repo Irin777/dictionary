@@ -28,6 +28,14 @@ second->prev = NULL;
 return second;
 }
 }
+struct node *mergeSort(struct node *head)
+{if (!head || !head->next)
+return head;
+struct node *second = split(head);
+head = mergeSort(head);
+second = mergeSort(second);
+return merge(head, second);
+}
 
 struct node *split(struct node *head)
 {struct node *fast = head, *slow = head;

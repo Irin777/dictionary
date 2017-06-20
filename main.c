@@ -28,6 +28,9 @@ ifstream input("input.txt");
 getline(input, buf);
 struct node *head = NULL;
 string word;
+buf.erase(remove_if(buf.begin(), buf.end(), iswpunct), buf.end());
+struct node *head = NULL;
+string word;
 for (int i = 0; i < buf.size(); i++){
 if (buf[i] != ' '){
 word += buf[i];} 

@@ -25,6 +25,15 @@ return temp;
 int main()
 {string buf;
 ifstream input("input.txt");
+getline(input, buf);
+struct node *head = NULL;
+string word;
+for (int i = 0; i < buf.size(); i++){
+if (buf[i] != ' '){
+word += buf[i];} 
+else{
+insert(&head, word);
+word.clear();}}
 print(head);
 return 0;
 }

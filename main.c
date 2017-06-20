@@ -21,3 +21,10 @@ struct node *temp = slow->next;
 slow->next = NULL;
 return temp;
 }
+
+int main()
+{string buf;
+ifstream input("input.txt");
+print(head);
+return 0;
+}

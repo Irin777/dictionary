@@ -79,6 +79,7 @@ word += buf[i];}
 else{
 insert(&head, word);
 word.clear();}}
+head = mergeSort(head);
 print(head);
 return 0;
 }

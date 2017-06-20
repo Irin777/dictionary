@@ -11,6 +11,23 @@ struct node *next, *prev;
 };
 
 struct node *split(struct node *head);
+struct node *merge(struct node *first, struct node *second)   
+{if (!first)
+return second;
+if (!second)
+return first;
+if (first->data < second->data)    
+{first->next = merge(first->next, second);
+first->next->prev = first;
+first->prev = NULL;
+return first;}
+else{
+second->next = merge(first, second->next);
+second->next->prev = second;
+second->prev = NULL;
+return second;
+}
+}
 
 struct node *split(struct node *head)
 {struct node *fast = head, *slow = head;
